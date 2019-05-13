@@ -1,0 +1,48 @@
+{
+  "name": "ssy-publish",
+  "version": "1.0.0",
+  "description": "just for publish by sftp",
+  "author": "shangyy",
+  "license": "MIT",
+  "repository": "shangyueyue/ssy-publish",
+  "bin": "src/index.js",
+  "main": "src/index.js",
+  "module": "src/index.js",
+  "jsnext:main": "src/index.js",
+  "engines": {
+    "node": ">=8",
+    "npm": ">=5"
+  },
+  "scripts": {
+    "lint": "eslint --ext .js src --fix"
+  },
+  "dependencies": {
+    "colors": "^1.3.3",
+    "commander": "^2.20.0",
+    "ejs": "^2.6.1",
+    "inquirer": "^6.3.1",
+    "ora": "^3.4.0",
+    "ssh2-sftp-client": "^2.5.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.17.2",
+    "husky": "^1.2.1",
+    "lint-staged": "^8.1.0"
+  },
+  "files": [
+    "src"
+  ],
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "npm run lint",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
+}
